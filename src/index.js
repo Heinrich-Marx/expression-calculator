@@ -4,9 +4,20 @@ function eval() {
 }
 
 function expressionCalculator(expr) {
-    // write your solution here
+   
+   try {
+    expr = 'return ' + expr;
+    let a = new Function(expr);
+    return a()
+   }
+   catch (error) {
+       return error
+   }
+
 }
 
 module.exports = {
     expressionCalculator
 }
+
+
