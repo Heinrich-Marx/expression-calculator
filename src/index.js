@@ -5,14 +5,16 @@ function eval() {
 
 function expressionCalculator(expr) {
    
-   try {
+   
     expr = 'return ' + expr;
     let a = new Function(expr);
-    return a()
-   }
-   catch (error) {
-       return error
-   }
+    let b = a();
+    if (b == Infinity) {
+        throw 'TypeError: Division by zero.'
+    }
+    else {
+        return b
+    }
 
 }
 
